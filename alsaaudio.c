@@ -692,9 +692,9 @@ static PyObject *
 alsapcm_read(alsapcm_t *self, PyObject *args)
 {
     int res;
-    char buffer[8000];
+    char buffer[24000];
 
-    if (self->framesize * self->periodsize > 8000) {
+    if (self->framesize * self->periodsize > 24000) {
 
         PyErr_SetString(ALSAAudioError,"Capture data too large. "
                         "Try decreasing period size");
